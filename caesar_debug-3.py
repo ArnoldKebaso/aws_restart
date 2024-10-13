@@ -1,4 +1,4 @@
-# Module Lab: Caesar Cipher Program Bug #1
+# Module Lab: Caesar Cipher Program Bug #3
 #
 # In a previous lab, you created a Caesar cipher program. This version of
 # the program is buggy. Use a debugger to find the bug and fix it.
@@ -25,7 +25,7 @@ def encryptMessage(message, cipherKey, alphabet):
     uppercaseMessage = message.upper()
     for currentCharacter in uppercaseMessage:
         position = alphabet.find(currentCharacter)
-        newPosition = position + cipherKey
+        newPosition = position + int(cipherKey)
         if currentCharacter in alphabet:
             encryptedMessage = encryptedMessage + alphabet[newPosition]
         else:
@@ -35,7 +35,7 @@ def encryptMessage(message, cipherKey, alphabet):
 # Decrypt message
 def decryptMessage(message, cipherKey, alphabet):
     decryptKey = -1 * int(cipherKey)
-    return encryptMessage(message, decryptKey, alphabet)
+    return encryptMessage(message, cipherKey, alphabet)
 
 # Main program logic
 def runCaesarCipherProgram():
@@ -54,3 +54,4 @@ def runCaesarCipherProgram():
 
 # Main logic
 runCaesarCipherProgram()
+
